@@ -1,30 +1,25 @@
 {
-  "name": "saveto",
-  "version": "1.0.0",
-  "description": "",
+  "name": "writeTo",
+  "version": "0.0.0",
+  "description": "Write data to a file",
   "main": "index.js",
-  "type": "module",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
+    "test": "node ./test/test.js",
     "lint": "eslint . --ext .js",
     "link:fix": "eslint . --ext .js --fix"
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/devXprite/saveTo.git"
+    "url": "git+https://github.com/devXprite/writeto.git"
   },
   "author": "DevXprite",
   "license": "GPL-3.0",
   "bugs": {
-    "url": "https://github.com/devXprite/saveTo/issues"
+    "url": "https://github.com/devXprite/writeto/issues"
   },
-  "homepage": "https://github.com/devXprite/saveTo#readme",
+  "homepage": "https://github.com/devXprite/writeto#readme",
   "devDependencies": {
     "eslint": "^8.21.0",
-    "eslint-config-standard": "^17.0.0",
-    "eslint-plugin-import": "^2.26.0",
-    "eslint-plugin-n": "^15.2.4",
-    "eslint-plugin-promise": "^6.0.0",
-    "eslint-plugin-unicorn": "^43.0.2"
+    "eslint-config-google": "^0.14.0"
   }
 }

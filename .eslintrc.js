@@ -1,15 +1,15 @@
-/* eslint-disable unicorn/prefer-module */
 module.exports = {
-  env: {
-    es2021: true
+  'env': {
+    'browser': true,
+    'commonjs': true,
+    'es2021': true,
   },
-  extends: [
-    'standard',
-    'plugin:unicorn/recommended'
+  'extends': [
+    'google',
   ],
-  parserOptions: {
-    ecmaVersion: 'latest',
-    sourceType: 'module'
+  'parserOptions': {
+    'ecmaVersion': 'latest',
   },
-  rules: {}
-}
+  'rules': {
+  },
+};
