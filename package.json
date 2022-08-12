@@ -2,7 +2,7 @@
   "name": "file-write",
   "version": "0.0.0",
   "description": "Write data to a file",
-  "main": "index.js",
+  "main": "./lib/fileWrite.js",
   "scripts": {
     "test": "node ./test/test.js",
     "lint": "eslint . --ext .js",
