@@ -1,3 +1,3 @@
-const writeTo = require('../lib/writeTo');
+const fileWrite = require('../lib/fileWrite');
 
-writeTo('foo.txt', 'some data...')
+fileWrite('foo.txt', 'some data...')

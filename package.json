@@ -1,5 +1,5 @@
 {
-  "name": "writeTo",
+  "name": "file-write",
   "version": "0.0.0",
   "description": "Write data to a file",
   "main": "index.js",
@@ -10,14 +10,14 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/devXprite/writeto.git"
+    "url": "git+https://github.com/devXprite/fileWrite.git"
   },
   "author": "DevXprite",
   "license": "GPL-3.0",
   "bugs": {
-    "url": "https://github.com/devXprite/writeto/issues"
+    "url": "https://github.com/devXprite/fileWrite/issues"
   },
-  "homepage": "https://github.com/devXprite/writeto#readme",
+  "homepage": "https://github.com/devXprite/fileWrite#readme",
   "devDependencies": {
     "eslint": "^8.21.0",
     "eslint-config-google": "^0.14.0"
