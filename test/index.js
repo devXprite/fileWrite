@@ -1,4 +1,4 @@
-const fileWrite = require('../src/fileWrite');
+const fileWrite = require('../lib/fileWrite');
 const fs = require('fs');
 const chai = require('chai');
 const expect = chai.expect;

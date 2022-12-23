@@ -1,2 +1,2 @@
-src/fileWrite.js
+lib/fileWrite.js
 test/*.js
