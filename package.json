@@ -4,7 +4,7 @@
   "description": "Write data to a file",
   "main": "./lib/fileWrite.js",
   "scripts": {
-    "test": "node ./test/test.js",
+    "test": "mocha",
     "lint": "eslint . --ext .js",
     "link:fix": "eslint . --ext .js --fix"
   },
@@ -19,7 +19,9 @@
   },
   "homepage": "https://github.com/devXprite/fileWrite#readme",
   "devDependencies": {
+    "chai": "^4.3.7",
     "eslint": "^8.21.0",
-    "eslint-config-google": "^0.14.0"
+    "eslint-config-google": "^0.14.0",
+    "mocha": "^10.2.0"
   }
 }
