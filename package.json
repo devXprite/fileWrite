@@ -1,6 +1,6 @@
 {
   "name": "file-write",
-  "version": "0.0.2",
+  "version": "0.2.0",
   "description": "Write data to a file",
   "main": "./lib/fileWrite.js",
   "scripts": {
@@ -17,6 +17,23 @@
   "bugs": {
     "url": "https://github.com/devXprite/fileWrite/issues"
   },
+  "keywords": [
+    "asyncfile",
+    "systemfile",
+    "filepath",
+    "files",
+    "filesystem",
+    "folder",
+    "fs",
+    "fs.writeFile",
+    "fs.writeFileSync",
+    "path",
+    "promise",
+    "write",
+    "writefile",
+    "file-write",
+    "fileWrite"
+  ],
   "homepage": "https://github.com/devXprite/fileWrite#readme",
   "devDependencies": {
     "chai": "^4.3.7",

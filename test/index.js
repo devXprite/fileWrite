@@ -14,30 +14,32 @@ describe('fileWrite', () => {
     fs.rmdirSync('testDir', { recursive: true });
   });
 
+  // create test to test sync parameter
+  
   it('writes data to the file', async () => {
     await fileWrite('testDir/test-file.txt', 'Test data');
     const fileData = fs.readFileSync('testDir/test-file.txt', 'utf8');
-    expect(fileData).to.equal('Test data\r\n');
+    expect(fileData).to.equal('Test data\n');
   });
 
   it('overwrites the file if the overwrite option is true', async () => {
     await fileWrite('testDir/test-file.txt', 'Test data');
     await fileWrite('testDir/test-file.txt', 'Overwritten data', { overwrite: true });
     const fileData = fs.readFileSync('testDir/test-file.txt', 'utf8');
-    expect(fileData).to.equal('Overwritten data\r\n');
+    expect(fileData).to.equal('Overwritten data\n');
   });
 
   it('appends the data to the file if the overwrite option is false', async () => {
     await fileWrite('testDir/test-file.txt', 'Test data');
     await fileWrite('testDir/test-file.txt', 'Appended data', { overwrite: false });
     const fileData = fs.readFileSync('testDir/test-file.txt', 'utf8');
-    expect(fileData).to.equal('Test data\r\nAppended data\r\n');
+    expect(fileData).to.equal('Test data\nAppended data\n');
   });
 
   it('writes the data synchronously if the sync option is true', async () => {
     fileWrite('testDir/test-file.txt', 'Test data', { sync: true });
     const fileData = fs.readFileSync('testDir/test-file.txt', 'utf8');
-    expect(fileData).to.equal('Test data\r\n');
+    expect(fileData).to.equal('Test data\n');
   });
 
 //   it('creates the directories leading up to the file if the createDirs option is true', async () => {
@@ -55,17 +57,11 @@ describe('fileWrite', () => {
 //     }
 //   });
 
-  it('uses the specified line ending character(s) when writing the data to the file', async () => {
-    await fileWrite('testDir/test-file.txt', 'Test data', { lineEnding: '\r\n' });
-    const fileData = fs.readFileSync('testDir/test-file.txt', 'utf8');
-    expect(fileData).to.equal('Test data\r\n');
-  });
-
   it('increments the file name if the increment option is true and the file already exists', async () => {
     await fileWrite('testDir/test-file.txt', 'Test data');
     await fileWrite('testDir/test-file.txt', 'Test data', { increment: true });
     const fileData = fs.readFileSync('testDir/test-file (1).txt', 'utf8');
-    expect(fileData).to.equal('Test data\r\n');
+    expect(fileData).to.equal('Test data\n');
   });
 
   it('rejects the promise with an error if the exclusive option is true and the file already exists', async () => {
