@@ -52,19 +52,19 @@ overwrite: false
 ```
 
 
-### `options.sync` 
+### `options.async` 
 
 **Type:** `boolean`  
-**Default:** `false`
+**Default:** `true`
 
-If set to `true`, the data will be written synchronously. If set to `false`, the data will be written asynchronously (using a promise).
+If set to `true`, the data will be written asynchronously (return a promise). If set to `false`, the data will be written synchronously.
 
 ```javascript
 // Write data to the file synchronously (blocking) return undefined
-fileWrite('path/to/file.txt', 'Test data', { sync: true });
+fileWrite('path/to/file.txt', 'Test data', { async: false });
 
 // Write data to the file asynchronously (non-blocking) and return a promise
-fileWrite('path/to/file.txt', 'Test data', { sync: false }).then(() => {
+fileWrite('path/to/file.txt', 'Test data', { async: true }).then(() => {
   console.log('File written successfully!');
 }).catch((err) => {
   console.error(err);
