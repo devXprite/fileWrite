@@ -1,7 +1,6 @@
 # fileWrite
 
-A Promise-based utility function for writing data to a file in Node.js.
-The filewrite library is a simple and flexible way to write data to a file in Node.js. It provides a number of options to customize the way data is written to the file, including the ability to overwrite or append to the file, write data synchronously or asynchronously, create missing directories leading up to the file.
+Its a simple and flexible way to write data to a file in Node.js. It provides a number of options to customize the way data is written to the file, including the ability to overwrite or append to the file, write data synchronously or asynchronously, create missing directories leading up to the file.
 
 ## Installation
 
