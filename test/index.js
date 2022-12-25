@@ -14,7 +14,26 @@ describe('fileWrite', () => {
     fs.rmdirSync('testDir', { recursive: true });
   });
 
-  // create test to test sync parameter
+  it('returns a promise if the async option is true', async () => {
+    const promise = fileWrite('testDir/test-file.txt', 'Test data', { async: true });
+
+    expect(promise).to.be.an.instanceof(Promise);
+
+    const resolvedValue = await promise;
+    expect(resolvedValue).to.be.undefined;
+
+    const fileExists = fs.existsSync('testDir/test-file.txt');
+    expect(fileExists).to.be.true;
+  });
+
+  it('returns undefined if the async option is false', () => {
+    const returnValue = fileWrite('testDir/test-file.txt', 'Test data', { async: false });
+
+    expect(returnValue).to.be.undefined;
+
+    const fileExists = fs.existsSync('testDir/test-file.txt');
+    expect(fileExists).to.be.true;
+  });
   
   it('writes data to the file', async () => {
     await fileWrite('testDir/test-file.txt', 'Test data');
@@ -35,27 +54,6 @@ describe('fileWrite', () => {
     const fileData = fs.readFileSync('testDir/test-file.txt', 'utf8');
     expect(fileData).to.equal('Test data\nAppended data\n');
   });
-
-  it('writes the data synchronously if the sync option is true', async () => {
-    fileWrite('testDir/test-file.txt', 'Test data', { sync: true });
-    const fileData = fs.readFileSync('testDir/test-file.txt', 'utf8');
-    expect(fileData).to.equal('Test data\n');
-  });
-
-//   it('creates the directories leading up to the file if the createDirs option is true', async () => {
-//     await fileWrite('testDir/nested/test-file.txt', 'Test data', { createDirs: true });
-//     const fileData = fs.readFileSync('testDir/nested/test-file.txt', 'utf8');
-//     expect(fileData).to.equal('Test data\r\n');
-//   });
-
-//   it('rejects the promise with an error if the createDirs option is false and the directories do not exist', async () => {
-//     try {
-//       await fileWrite('testDir/nested/test-file.txt', 'Test data', { createDirs: false });
-//       throw new Error('Expected promise to be rejected');
-//     } catch (error) {
-//       expect(error).to.be.an('error');
-//     }
-//   });
 
   it('increments the file name if the increment option is true and the file already exists', async () => {
     await fileWrite('testDir/test-file.txt', 'Test data');
