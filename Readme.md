@@ -1,10 +1,10 @@
 # fileWrite
 
-Its a simple and flexible way to write data to a file in Node.js. It provides a number of options to customize the way data is written to the file, including the ability to overwrite or append to the file, write data synchronously or asynchronously, create missing directories leading up to the file.
+Its a simple and flexible way to write data to a file in Node.js. It provides a number of options to customize the way data is written to the file, including the ability to overwrite or append to the file, write data synchronously or asynchronously.
 
 ## Installation
 
-To install `fileWrite`, run the following command in your project directory:
+To install `file-write`, run the following command in your project directory:
 
 ```bash
 npm i file-write
@@ -30,6 +30,19 @@ fileWrite('path/to/file.txt', 'Test data');
 ## Options
 
 The `filewrite` function accepts the following options:
+
+### `options.encoding`
+
+**Type:** `string`
+**Default:** `utf8`
+
+The encoding to use when writing the file. All valid [Node.js encodings](https://nodejs.org/api/buffer.html#buffer_buffers_and_character_encodings) are supported.
+
+```javascript
+fileWrite('path/to/file.txt', 'Test data', {
+  encoding: 'utf8'
+});
+```
 
 ### `options.overwrite`
 
@@ -107,7 +120,6 @@ await fileWrite('path/to/file.txt', 'Test data', {
 exclusive: true
 });
 ```
-
 
 ## License
 
